@@ -61,22 +61,6 @@ public class Team {
 		//code here
 		
 		readData();
-		//readSalaryData();
-		
-//		createCustomTeam();
-//		
-//		viewUniqueTeam();
-//		
-//		viewNbaTeamRoster();
-		
-//		for (Player aPlayer : players)
-//		{
-//			if (checkPlayerStatus(aPlayer) == false)
-//			{
-//				System.out.println(aPlayer.getPlayerName());
-//			}
-//		}
-		
 		addingPlayerStatus();
 	}
 
@@ -87,78 +71,8 @@ public class Team {
 		Team aTeam = new Team();
 	}
 
-	public void createCustomTeam () {
-		
-		int counter = 0;
-		while (counter < 6)
-		{
-			System.out.println("Please enter the name of the player to add >");
-			String name = scan.nextLine();
-			
-			for (Player aPlayer : players)
-			{
-				if (aPlayer.getPlayerName().equals(name))
-					{
-						newTeam.add(aPlayer);
-						System.out.println(aPlayer.getPlayerName() + " has been added to your team.");
-						counter++;
-					}
-			}
-			if (counter == 5) {
-				System.out.println("Your team is now complete.");
-				printCustomTeam();
-			}
-		}
-	}
 	
-	public void printCustomTeam() {
-		for (Player aPlayer : newTeam)
-		{
-			System.out.println("Name: " + aPlayer.getPlayerName() + " " + "Position: " + aPlayer.getPosition());
-		}
-	}
 	
-	public void viewUniqueTeam() {
-		for (Player aPlayer : players)
-		{
-			String team = aPlayer.getTeam();
-			
-			Integer value = nbaTeams.get(team);
-			
-			if (value == null)
-			{
-				nbaTeams.put(team, 1);
-			}
-			else {
-				nbaTeams.put(team, value+1);
-			}
-		}
-		
-		for (String team : nbaTeams.keySet())
-		{
-			System.out.println(team + " has " + nbaTeams.get(team) + " players.");
-		}
-
-
-		
-	}
-	
-	public void viewNbaTeamRoster() {
-		System.out.println("Enter the name of team to view >");
-		String team = scan.nextLine(); 
-		
-		System.out.println(team + " :");
-		
-		for (Player aPlayer : players)
-		{
-			if (aPlayer.getTeam().equals(team))
-			{
-				System.out.println(aPlayer.getPlayerName());
-			}				
-		}
-		
-		
-	}
 	
 	//This method checks if the player is apart of the Atl Hawks
 	public boolean checkPlayerStatus (Player thisPlayer) { 
@@ -201,6 +115,7 @@ public class Team {
 		printPlayerStatus();
 	}
 	
+	//Prints the contents of the playerStatus HashMap
 	public void printPlayerStatus() {
 		for (String playerName : playerStatus.keySet())
 		{
