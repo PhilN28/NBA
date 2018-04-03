@@ -86,7 +86,9 @@ public class Team {
 		return false;
 	}
 	
+	
 	//Places the players into a hashMap with a key name and boolean t/f (t == they are on the atl hawks, f == not on atl hawks)
+	//if they are on the atlanta hawks, remove them from the players arraylist
 	public void addingPlayerStatus() {
 		boolean x = false;
 		for (Player aPlayer : players)
